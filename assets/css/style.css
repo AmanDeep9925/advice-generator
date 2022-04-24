@@ -1,0 +1,183 @@
+/***************/
+/* * IMPORTS * */
+/***************/
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Manrope&family=Montserrat:wght@700&display=swap");
+
+/*****************/
+/* * VRIAABLES * */
+/*****************/
+
+:root {
+  /* * Primary Colors  */
+  --light-cyan: #cee3e9;
+  --neon-green: #52ffa8;
+
+  /* * Neutrals */
+  --grayish-blue: #4e5d73;
+  --dark-grayish-blue: #323a49;
+  --dark-blue: #1e2634;
+
+  /* * Font size */
+  --font-size: 28px;
+}
+
+/**************/
+/* * RESETS * */
+/**************/
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+img,
+figure,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: var(--dark-blue);
+  font-family: "Manrope", sans-serif;
+}
+
+/********************/
+/* * Main Styling * */
+/********************/
+
+#main {
+  color: white;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  place-items: center;
+}
+
+/********************/
+/* * Advice Card  * */
+/********************/
+
+.container {
+  position: relative;
+}
+
+.advice__container {
+  width: 580px;
+  height: 400px;
+  padding: 10px 40px;
+  border-radius: 15px;
+  background-color: var(--dark-grayish-blue);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  place-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+}
+
+.advice__id {
+  color: var(--neon-green);
+  letter-spacing: 0.3rem;
+}
+
+.advice__block {
+  font-size: calc(1 * var(--font-size));
+  padding: 20px;
+  text-align: center;
+}
+
+.advice__block::before {
+  content: '"';
+}
+
+.advice__block::after {
+  content: '"';
+}
+
+.advice__dice__container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  position: absolute;
+  background-color: var(--neon-green);
+  text-align: center;
+  bottom: -15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.dice {
+  display: block;
+  margin: 25% auto;
+  width: 50%;
+}
+
+.advice__dice__container:hover {
+  box-shadow: var(--neon-green) 0px 2px 4px 0px,
+    var(--neon-green) 0px 2px 16px 0px;
+}
+
+.dice:hover {
+  animation: rotate1 2s infinite;
+}
+
+@keyframes rotate1 {
+  0% {
+    transform: rotate(72deg);
+  }
+  25% {
+    transform: rotate(144deg);
+  }
+  50% {
+    transform: rotate(216deg);
+  }
+  75% {
+    transform: rotate(288deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate2 {
+  100% {
+    transform: rotate(360deg);
+  }
+  75% {
+    transform: rotate(280deg);
+  }
+  50% {
+    transform: rotate(216deg);
+  }
+  25% {
+    transform: rotate(144deg);
+  }
+  0% {
+    transform: rotate(72deg);
+  }
+}
